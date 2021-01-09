@@ -1,0 +1,17 @@
+.counter {
+    height: 300px;
+    width: 400px;
+}
+
+.borders {
+    border: solid 3px cyan;
+    border-radius: 10px;
+}
+
+.buttonsArea {
+    height: 80px;
+    margin: 20px;
+    /*width: 360px;*/
+
+
+}

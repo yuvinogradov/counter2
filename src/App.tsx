@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Counter from "./Components/Counter/Counter";
+
+
+//       Задача: сделать счетчик с настройками.
+//       - Блок настроек позволяет ввести максимальное значение и стартовое: max value/start value
+//       - сделать проверку на правильный ввод: при неправильном вводе:
+//            1) подсвечивается поле ввода,
+//            2) выводится сообщение, вместо значения счетчика ("Incorrect value"),
+//            3) дизэйблится кнопка Set
+//
+//       - при установке допустимого значения
+//              1) выводится сообщение "enter values and press 'set' ",
+//              2) раздизэйбливается кнопка Set
+
+//       Проверки: старт меньше нуля, максимум меньше или равно старту
+//       Сохранять наши настройки в ЛОКАЛ СТОРЭЙДЖЕ.
+//       Разбивать на компоненты. Кнопки - одна компонента, примененная трижды
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <Counter/>
+            </header>
+        </div>
+    );
 }
 
 export default App;
