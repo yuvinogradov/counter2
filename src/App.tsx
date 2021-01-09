@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Counter from "./Components/Counter/Counter";
+import CounterSettings from "./Components/CounterSettings/CounterSettings";
 
 
 //       Задача: сделать счетчик с настройками.
@@ -23,6 +24,7 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
+                <CounterSettings/>
                 <Counter/>
             </header>
         </div>
