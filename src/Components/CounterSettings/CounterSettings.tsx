@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import s from './CounterSettings.module.css'
-import Display from "../Display/Display";
+// import Display from "../Display/Display";
 import Button from "../Button/Button";
+import InputArea from "../../InputArea/InputArea";
 
 
 const MIN = 0;
@@ -19,7 +20,7 @@ export default function CounterSettings() {
     }
 
     return <div className={`${s.counterSettingsBox} ${s.borders}`}>
-        <Display counter={counter} maxCounter={MAX}/>
+        <InputArea counter={counter} maxCounter={MAX}/>
         <div className={`${s.buttonsArea} ${s.borders}`}>
             <Button text='SET' action={counterIncrement} disabled={counter >= MAX}/>
         </div>

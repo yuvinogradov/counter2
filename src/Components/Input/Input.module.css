@@ -1,0 +1,11 @@
+.input {
+    /*border-radius: inherit;*/
+    height: 40px;
+    line-height: 40px;
+
+}
+
+.title {
+    font-size: 14px;
+    color: cyan;
+}
