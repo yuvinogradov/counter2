@@ -7,7 +7,6 @@ import Input from "../Input/Input";
 export default function CounterSettings(props: any) {
     const {state, setState} = props;
 
-    //вынести проверку  значений сюда и просто подставлять в newState переменные
 
     const changeMax = (e: ChangeEvent<HTMLInputElement>) => {
         const newState = {
