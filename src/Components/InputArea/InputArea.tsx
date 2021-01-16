@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './InputArea.module.css'
-import Input from "../Components/Input/Input";
+import Input from "../Input/Input";
 
 export type DisplayPropsType = {
     counter: number

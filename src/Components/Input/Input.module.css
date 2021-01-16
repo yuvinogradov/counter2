@@ -1,11 +1,17 @@
 .input {
     /*border-radius: inherit;*/
-    height: 40px;
-    line-height: 40px;
+    height: 24px;
+    display: flex;
+    line-height: 20px;
+    flex-direction: row;
+    margin: 20px 0;
 
 }
 
 .title {
     font-size: 14px;
     color: cyan;
+    margin-right: 10px;
+    width: 80px;
+    text-align: left;
 }

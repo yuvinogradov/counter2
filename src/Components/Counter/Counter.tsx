@@ -4,25 +4,28 @@ import Display from "../Display/Display";
 import Button from "../Button/Button";
 
 
-const MIN = 0;
-const MAX = 7;
+// const MIN = 0;
+// const MAX = 7;
 
-function Counter() {
-    let [counter, setCounter] = useState(0);
+function Counter(props: any) {
+    let {state, setState} = props
 
     function counterIncrement() {
-        setCounter(counter + 1)
+        setState({...state, counter: state.counter + 1})
     }
 
     function counterReset() {
-        setCounter(0)
+        setState({...state, counter: state.startValue})
     }
 
+    //debugger
+
     return <div className={`${s.counter} ${s.borders}`}>
-        <Display counter={counter} maxCounter={MAX}/>
+        <Display state={state}/>
         <div className={`${s.buttonsArea} ${s.borders}`}>
-            <Button text='INC' action={counterIncrement} disabled={counter >= MAX}/>
-            <Button text='RESET' action={counterReset} disabled={(counter === MIN)}/>
+            <Button text='INC' action={counterIncrement} disabled={state.counter >= state.maxValue || state.editMode}/>
+            <Button text='RESET' action={counterReset}
+                    disabled={(state.counter === state.startValue || state.editMode)}/>
         </div>
 
     </div>

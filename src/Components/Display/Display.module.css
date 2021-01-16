@@ -12,7 +12,14 @@
     /*src: url('put_the_location_to_your_font.ttf or .otf');*/
     color: black;
 }
+.counter {
+    font-size: 90px;
+}
+
+.message {
+    font-size: 20px;
+}
 
 .max {
-    color: red;
+    color: darkred;
 }

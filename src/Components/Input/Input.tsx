@@ -1,4 +1,4 @@
-import React from "react";
+import React, {ChangeEvent} from "react";
 import s from './Input.module.css'
 
 type ButtonPropsType = {
@@ -8,10 +8,11 @@ type ButtonPropsType = {
 }
 
 export default function Input(props: any) {
+
+
     return <div className={s.input}>
         <div className={s.title}>{props.title}</div>
-        <div>        <input type="number" value={props.val} ></input></div>
-        {/*<span><input type='number'>{props.value}</input> </span>*/}
+        <input type="number" value={props.val} onChange={props.action}></input>
     </div>
 
 }
