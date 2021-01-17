@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './App.css';
 import Counter from "./Components/Counter/Counter";
 import CounterSettings from "./Components/CounterSettings/CounterSettings";
-import Button from "./Components/Button/Button";
 
 
 //       Задача: сделать счетчик с настройками.
@@ -21,22 +20,30 @@ import Button from "./Components/Button/Button";
 //       Сохранять наши настройки в ЛОКАЛ СТОРЭЙДЖЕ.
 //       Разбивать на компоненты. Кнопки - одна компонента, примененная трижды
 
-const MAX = 5;
-const MIN = 0;
+
 
 function App() {
+
+    const MAX = 5;
+    const MIN = 0;
+
+
+
     let [state, setState] = useState(
         {
-            maxValue: MAX,
-            startValue: MIN,
-            currentMaxVal: MAX,
-            currentStartVal: MIN,
-            counter: MIN,
+            maxValue: +(localStorage.getItem('maxValue') || MAX),
+            startValue: +(localStorage.getItem('startValue') || MIN),
+            currentMaxVal: +(localStorage.getItem('maxValue') || MAX),
+            currentStartVal: +(localStorage.getItem('startValue') || MIN),
+            counter: +(localStorage.getItem('counter') || MIN),
             settingsError: false,
             editMode: false,
             counterMessage: "",
         }
     )
+    localStorage.setItem('maxValue', ''+state.maxValue);
+    localStorage.setItem('startValue', ''+state.startValue);
+    localStorage.setItem('counter', ''+state.counter);
 
 
     return (

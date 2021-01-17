@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent} from 'react';
 import s from './CounterSettings.module.css'
 import Button from "../Button/Button";
 import Input from "../Input/Input";
@@ -14,7 +14,7 @@ export default function CounterSettings(props: any) {
             currentMaxVal: e.currentTarget.value,
             editMode: true,
         }
-        if (+e.currentTarget.value <= state.currentStartVal) {
+        if (+e.currentTarget.value <= state.currentStartVal || state.currentStartVal < 0) {
             newState.settingsError = true;
             newState.counterMessage = 'Incorrect value'
         } else {
@@ -24,12 +24,19 @@ export default function CounterSettings(props: any) {
         setState(newState)
     }
     const changeMin = (e: ChangeEvent<HTMLInputElement>) => {
-        setState({
+        const newState = {
             ...state,
             currentStartVal: e.currentTarget.value,
             editMode: true,
-            counterMessage: "Enter values and press 'SET'"
-        })
+        }
+        if (+e.currentTarget.value >= state.currentMaxVal || +e.currentTarget.value < 0) {
+            newState.settingsError = true;
+            newState.counterMessage = 'Incorrect value'
+        } else {
+            newState.settingsError = false;
+            newState.counterMessage = "Enter values and press 'SET'"
+        }
+        setState(newState)
     }
     const setLimits = () => {
         // решил не сбрасывать счетчик в соответствии с новыми значениями maxValue и startValue
@@ -43,11 +50,13 @@ export default function CounterSettings(props: any) {
 
     return <div className={`${s.counterSettingsBox} ${s.borders}`}>
         <div className={s.inputArea}>
-            <Input title={'Max value'} val={state.currentMaxVal} action={changeMax}/>
-            <Input title={'Start value'} val={state.currentStartVal} action={changeMin}/>
+            <Input title={'Max value'} val={state.currentMaxVal} action={changeMax}
+                   error={`${ state.currentStartVal >= state.currentMaxVal ? 'true' : ''}`}/>
+            <Input title={'Start value'} val={state.currentStartVal} action={changeMin}
+                   error={`${state.currentStartVal < 0 || state.currentStartVal >= state.currentMaxVal ? 'true' : ''}`}/>
         </div>
         <div className={`${s.buttonsArea} ${s.borders}`}>
-            <Button text='SET' action={setLimits} disabled={!state.editMode}/>
+            <Button text='SET' action={setLimits} disabled={!state.editMode || state.settingsError}/>
         </div>
     </div>
 }

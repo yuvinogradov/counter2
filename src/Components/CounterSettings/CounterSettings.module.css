@@ -1,24 +1,23 @@
 .counterSettingsBox {
     height: 300px;
     width: 400px;
-    margin: 40px;
+    margin: 20px;
 }
 
 .inputArea {
     height: 160px;
-    /*width: 100%;*/
-    /*border: solid 3px cyan;*/
+
     border-radius: 10px;
-    /*background-color: cyan;*/
     display: flex;
     flex-direction: column;
     margin: 20px;
     vertical-align: middle;
     line-height: 150px;
     font-size: 90px;
-    /*font-family: BlinkMacSystemFont;*/
-    /*src: url('put_the_location_to_your_font.ttf or .otf');*/
-    color: black;
+}
+
+.error {
+    color: red;
 }
 
 .borders {

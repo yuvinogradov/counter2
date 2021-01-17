@@ -1,11 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import s from './Counter.module.css'
 import Display from "../Display/Display";
 import Button from "../Button/Button";
-
-
-// const MIN = 0;
-// const MAX = 7;
 
 function Counter(props: any) {
     let {state, setState} = props

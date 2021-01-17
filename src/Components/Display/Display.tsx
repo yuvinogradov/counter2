@@ -10,7 +10,9 @@ function Display(props: any) {
     const {counter, maxValue, editMode, counterMessage, settingsError} = props.state;
 
     return <div
-        className={`${s.display} ${editMode ? s.message : s.counter} ${((counter >= maxValue && !editMode) || false) ? s.max : ''}`}>
+        className={`${s.display} ${editMode ? s.message : s.counter} 
+                    ${((counter >= maxValue && !editMode) || settingsError) ? s.max : ''}
+                    `}>
         {editMode ? counterMessage : counter}
     </div>
     // return <div className={`${s.display} ${props.counter >= props.maxCounter ? s.max : ''}`}>

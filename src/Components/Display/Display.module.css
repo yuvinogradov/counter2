@@ -1,23 +1,21 @@
 .display {
     height: 160px;
-    /*width: 100%;*/
-    /*border: solid 3px cyan;*/
     border-radius: 10px;
     background-color: cyan;
     margin: 20px;
     vertical-align: middle;
     line-height: 150px;
     font-size: 90px;
-    /*font-family: BlinkMacSystemFont;*/
-    /*src: url('put_the_location_to_your_font.ttf or .otf');*/
     color: black;
 }
 .counter {
     font-size: 90px;
+    font-weight: bold;
 }
 
 .message {
     font-size: 20px;
+    font-weight: bold;
 }
 
 .max {
