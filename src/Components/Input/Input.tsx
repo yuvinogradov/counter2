@@ -1,10 +1,12 @@
 import React from "react";
 import s from './Input.module.css'
 
-type ButtonPropsType = {
+type InputPropsType = {
+
     title: string
-    action: void
-    disabled: boolean
+    val: string
+    action: () => void
+    error: boolean
 }
 
 export default function Input(props: any) {

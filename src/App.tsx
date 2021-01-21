@@ -20,6 +20,10 @@ import CounterSettings from "./Components/CounterSettings/CounterSettings";
 //       Сохранять наши настройки в ЛОКАЛ СТОРЭЙДЖЕ.
 //       Разбивать на компоненты. Кнопки - одна компонента, примененная трижды
 
+//    ПЕРЕДЕЛАТЬ:
+//    - ПЕРЕДАВАТЬ В КОМПОНЕНТЫ ТОЛЬКО НУЖНУЮ ЧАСТЬ СТЕЙТА
+//    - СОХРАНЯТЬ В ЛОКАЛСТОРЕДЖЕ НЕ НЕСКОЛЬКО ПЕРЕМЕННЫХ, А ОДИН ОБЪЕКТ, ИСПОЛЬЗУЯ json-toString
+
 
 
 function App() {
@@ -27,9 +31,7 @@ function App() {
     const MAX = 5;
     const MIN = 0;
 
-
-
-    let [state, setState] = useState(
+    let [state, setState] = useState<any>(
         {
             maxValue: +(localStorage.getItem('maxValue') || MAX),
             startValue: +(localStorage.getItem('startValue') || MIN),
